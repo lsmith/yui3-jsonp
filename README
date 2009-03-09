@@ -1,0 +1,3 @@
+Module 'jsonp'.
+
+Adds method Y.jsonp(url,c) to the YUI instance enabling easy JSONP communication.

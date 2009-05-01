@@ -34,9 +34,12 @@ YUI.add('jsonp', function (Y) {
 
         c = l.isObject(c) ? c : {};
 
-        var success = (l.isFunction(c.success) ? c.success : noop),
+        var success = (l.isFunction(c) ? c :
+                       l.isFunction(c.success) ? c.success :
+                       noop),
             failure = (l.isFunction(c.failure) ? c.failure : noop),
-            pattern = (l.type(c.pattern) === 'regexp' ? c.pattern : Y.jsonp.pattern),
+            pattern = (l.type(c.pattern) === 'regexp' ? c.pattern :
+                       Y.jsonp.pattern),
             proxy   = Y.guid().replace(/-/g,'_');
 
         // add in the proxy method string to the URL

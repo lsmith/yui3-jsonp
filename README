@@ -1,3 +1,5 @@
 Module 'jsonp'.
 
-Adds method Y.jsonp(url,c) to the YUI instance enabling easy JSONP communication.
+Provides class Y.JSONPRequest to encapsulate JSONP requests.  The send() method issues the JSONP request, and can be used multiple times if you want to poll a source (the Twitter API for example).
+
+Also provides a convenience method Y.jsonp(url,c) which creates an instance and calls send() immediately, returning the JSONPRequest instance.

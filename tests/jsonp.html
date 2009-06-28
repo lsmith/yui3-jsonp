@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test Page</title>
+    <link type="text/css" rel="stylesheet" href="/assets/dpSyntaxHighlighter.css">
+</head>
+<body>
+<pre id="x"></pre>
+
+<script type="text/javascript" src="http://yui.yahooapis.com/3.0.0b1/build/yui/yui.js"></script>
+<script type="text/javascript" src="../js/jsonp.js"></script>
+<script type="text/javascript">
+YUI().use('selector-css3','jsonp','json-stringify', function (Y) {
+
+    var url = 'http://twitter.com/statuses/user_timeline/yuilibrary.json?' +
+              'count=3&callback={callback}';
+
+    Y.jsonp(url ,function (data) {
+        document.getElementById('x').appendChild(
+            document.createTextNode(
+                Y.JSON.stringify(data,null,4)));
+    });
+
+});
+</script>
+<script type="text/javascript" src="/assets/dpSyntaxHighlighter.js" ></script>
+<script type="text/javascript" src="/assets/dpSyntaxHighlightExample.js"></script>
+</body>
+</html>
